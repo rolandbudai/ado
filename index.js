@@ -20,7 +20,8 @@ let calc = function(){
 
     let rnd =  Math.floor(Math.random()* (999 - 100) + 100);     
 
-    //display the adoazonosito number
+    //calculate the 10th number
+
     let temp = `8${Difference_In_Days}${rnd}`;
 
     let digit10 =  (Number(temp[0]) +
@@ -32,14 +33,11 @@ let calc = function(){
     Number((temp[6])*7) +
     Number((temp[7])*8) +
     Number((temp[8])*9)) % 11
-   
-    console.log(digit10);    
+    
+    if (digit10 == 10) {alert("HIBÁS SZÁM - GENERÁLJ ÚJAT!")} else {digit10 = digit10};  
 
-    if (digit10 == 10) {alert("HIBÁS SZÁM - GENERÁLJ ÚJAT!")} else {digit10 = digit10};
-
-    console.log(digit10);    
-
-    adoaz.innerHTML = temp;
+    //display the adoazonosito number
+    adoaz.innerHTML = `${temp}${digit10}`;
 }
 
 ////run the calculation with button click
